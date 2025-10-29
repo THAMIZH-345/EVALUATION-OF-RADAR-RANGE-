@@ -1,4 +1,4 @@
-# EVALUATION-OF-RADAR-RANGE-
+# EVALUATION OF RADAR RANGE
 # AIM
 To calculate the maximum range of a radar system using the Radar Range Equation and verify the results through Python programming.
 # EQUIPMENTS REQUIRED
