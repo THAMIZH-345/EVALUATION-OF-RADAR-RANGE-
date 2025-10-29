@@ -43,7 +43,7 @@ subplot(3,1,3);
 plot(Gain_values, 10*log10(Pr_vs_Gain));
 ```
 # OUTPUT
-<img width="756" height="717" alt="image" src="https://github.com/user-attachments/assets/7f0d8563-0c75-4eaa-a822-5f7d3741dda1" />
+<img width="940" height="900" alt="image" src="https://github.com/user-attachments/assets/b4ad059d-663c-414c-b628-16d46c557c62" />
 
 # TABULATION
 
