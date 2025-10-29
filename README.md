@@ -41,7 +41,7 @@ Gain_values = 10:5:50;
 Pr_vs_Gain = (Pt * (Gain_values.^2) * lambda^2 * sigma) ./ ((4 * pi)^3 * (R_const^4));
 subplot(3,1,3);
 plot(Gain_values, 10*log10(Pr_vs_Gain));
-```
+``` 
 # OUTPUT
 <img width="940" height="900" alt="image" src="https://github.com/user-attachments/assets/b4ad059d-663c-414c-b628-16d46c557c62" />
 
