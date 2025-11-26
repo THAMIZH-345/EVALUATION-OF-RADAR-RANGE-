@@ -12,14 +12,45 @@ The Radar Range Equation is a fundamental formula used in radar system design to
 
 <img width="457" height="528" alt="image" src="https://github.com/user-attachments/assets/0a3969a4-d771-4537-989c-dc5cf96b7c0e" />
 
-# PROCEDURE
+## Algorithm
 
-1.	Set Up the Python Environment: Ensure that Python is installed on your system. You can use Anaconda for managing Python packages and environments, or any other Python IDE of your choice.
-2.	Import Necessary Libraries: Import the math library in Python.
-3.	Define the Radar Range Equation Function: Create a function to calculate the maximum range using the Radar Range Equation.
-4.	Input Parameters for the Radar System: Define the input parameters such as transmitted power, transmitter gain, receiver gain, radar frequency, radar cross section, and minimum detectable power.
-5.	Calculate the Maximum Range: Use the function to calculate the maximum range of the radar.
-6.	Execute the Program: Run the Python script to calculate and display the maximum range of the radar.
+1. Initialize constants:
+   - λ (wavelength) = 0.03 m  
+   - σ (radar cross section) = 1 m²  
+
+2. Vary each parameter while keeping the others constant:
+   - **Pt:** 0.1 → 10  
+   - **Gt:** 1 → 50  
+   - **Pm:** 1e⁻¹⁵ → 1e⁻¹⁰  
+
+3. Compute maximum range using:
+   R_max = ((Pt * Gt² * λ² * σ) / ((4π)³ * Pm))¼
+
+
+4. Plot the following:
+   - `Pt vs Rmax` 
+   - `Gt vs Rmax` 
+   - `Pm vs Rmax`
+     
+---
+
+## Procedure
+
+1. **Refer to the Algorithm** and write the Scilab code for the experiment.  
+2. **Open Scilab** on your system.  
+3. **Create a New Editor File:**  
+   - Go to `File → New → Script`.  
+4. **Type Your Code** in the editor window.  
+5. **Save the File** with a suitable name (e.g., `radar_range.sce`).  
+6. **Execute the Code:**  
+   - Press **F5** or click **Execute → File with echo**.  
+7. **If Any Errors Occur:**  
+   - Review and correct the code.  
+   - Save and **run it again** until it executes successfully.
+
+---
+
+
 # PROGRAM
 ```ASM
 pi = %pi;
