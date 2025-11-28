@@ -90,7 +90,6 @@ plot(Pm_vals, Rmax_Pm);
 # TABULATION
 <img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/90190e0b-9511-49ae-a404-109ffa7f0bb8" />
 
-
 # RESULT
 Thus, the maximum range of a radar system using the Radar Range Equation is verified through a Python program.
 
