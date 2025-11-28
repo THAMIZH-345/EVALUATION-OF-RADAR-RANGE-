@@ -53,30 +53,43 @@ The Radar Range Equation is a fundamental formula used in radar system design to
 
 # PROGRAM
 ```ASM
-pi = %pi;
-lambda = 0.03; 
-sigma = 1;
-Gt = 30/43;
-Gr = 30/456212301;
-Pt = 900;
-R = 1:1:10000;
-Pr = (Pt * Gt * Gr * lambda^2 * sigma) ./ ((4 * pi)^3 * R.^4);
+lambda = 0.05;      
+sigma  = 2;         
+
+Pt_vals = 0.5:0.5:20;   
+Gt_const = 20;          
+Pm_const = 1e-14;       
+
+Rmax_Pt = ((Pt_vals .* Gt_const.^2 .* lambda.^2 .* sigma) ./ ((4*%pi)^3 .* Pm_const)).^(1/4);
+
+Gt_vals = 5:2:100;      
+Pt_const = 3;           
+Pm_const = 1e-14;       
+
+Rmax_Gt = ((Pt_const .* Gt_vals.^2 .* lambda.^2 .* sigma) ./ ((4*%pi)^3 .* Pm_const)).^(1/4);
+
+Pm_vals = logspace(-14, -9, 50);  
+Pt_const = 2;          
+Gt_const = 25;         
+
+Rmax_Pm = ((Pt_const .* Gt_const.^2 .* lambda.^2 .* sigma) ./ ((4*%pi)^3 .* Pm_vals)).^(1/4);
+
 subplot(3,1,1);
-plot(R, 10*log10(Pr)); 
-Pt_values = 100:100:10000;
-R_const = 545100;
-Pr_vs_Pt = (Pt_values * Gt * Gr * lambda^2 * sigma) ./ ((4 * pi)^3 * (R_const^4));
+plot(Pt_vals, Rmax_Pt);
+
 subplot(3,1,2);
-plot(Pt_values, 10*log10(Pr_vs_Pt));
-Gain_values = 10:5:50;
-Pr_vs_Gain = (Pt * (Gain_values.^2) * lambda^2 * sigma) ./ ((4 * pi)^3 * (R_const^4));
+plot(Gt_vals, Rmax_Gt);
+
 subplot(3,1,3);
-plot(Gain_values, 10*log10(Pr_vs_Gain));
+plot(Pm_vals, Rmax_Pm);
+
 ``` 
 # OUTPUT
 <img width="940" height="900" alt="image" src="https://github.com/user-attachments/assets/b4ad059d-663c-414c-b628-16d46c557c62" />
 
 # TABULATION
+<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/90190e0b-9511-49ae-a404-109ffa7f0bb8" />
+
 
 # RESULT
 Thus, the maximum range of a radar system using the Radar Range Equation is verified through a Python program.
